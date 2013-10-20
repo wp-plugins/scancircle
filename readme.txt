@@ -4,17 +4,29 @@ Tags: scancircle, scan button, shortcode
 Requires at least: 2.5
 Tested up to: 3.6.1
 Stable tag: 1.18
+License: GPLv2 or any later version
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Shortcode for the ScanCircle scan button on partner websites. 
 Only for registered ScanCircle partners.
 
 == Description ==
-
 Insert the following shortcode in your posts:
 
-[scancircle partner="partner-code" language="en/nl" scanmode="D|A|M|P" info="1" prompt="text" require="text" parameter="url-parameter" reference="fixed-value"]
+[scancircle 
+	partner="partner-code" 
+	language="en/nl" 
+	scanmode="D|A|M|P" 
+	info="1" 
+	prompt="text" 
+	require="text" 
+	parameter="url-parameter" 
+	reference="fixed-value"
+]
 
-The only required field is partner. Default language is "en" (English). Login to your ScanCircle partner page and click the wizard wand to see all available options.
+The only required field is partner. 
+Default language is "en" (English). 
+Login to your ScanCircle partner page and click the wizard wand to see all available options.
 
 == Installation ==
 
@@ -41,5 +53,5 @@ See http://www.scancircle.com/forum/showthread.php?tid=50 (login required)
 
 == Changelog ==
 
-= 1.18 =
+= Version 1.18 =
 * First release
