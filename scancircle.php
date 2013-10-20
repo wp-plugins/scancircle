@@ -2,7 +2,7 @@
 	/**
 	 * Plugin Name: ScanCircle
 	 * Plugin URI: http://www.scancircle.com
-	 * Description: Shortcode for ScanCircle scan button
+	 * Description: Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
 	 * Version: 1.18
 	 * Author: Arnoud Klaren
 	 */
