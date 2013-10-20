@@ -1,9 +1,9 @@
-=== scancircle ===
+=== ScanCircle ===
 Contributors: aklaren
 Tags: scancircle, scan button, shortcode
 Requires at least: 2.5
 Tested up to: 3.6.1
-Stable tag: trunc
+Stable tag: 1.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Only for registered ScanCircle partners.
 == Description ==
 Insert the following shortcode in your posts:
 
-[scancircle
+`[scancircle
 	partner="partner-code"
 	language="en|nl"
 	scanmode="D|A|M|P" 
@@ -22,7 +22,7 @@ Insert the following shortcode in your posts:
 	require="text"
 	parameter="url-parameter"
 	reference="fixed-value"
-]
+]`
 
 Remarks:
 

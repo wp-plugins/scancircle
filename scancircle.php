@@ -1,9 +1,11 @@
 <?php
-	/*
-	Plugin Name: scancircle
-	Description: Shortcode for ScanCircle scanbutton
-	Version: 1.18
-	*/
+	/**
+	 * Plugin Name: ScanCircle
+	 * Plugin URI: http://www.scancircle.com
+	 * Description: Shortcode for ScanCircle scan button
+	 * Version: 1.18
+	 * Author: Arnoud Klaren
+	 */
 	add_shortcode('scancircle', 'scancircle_handler');
 
 	function scancircle_handler( $atts ) {
