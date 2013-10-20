@@ -7,10 +7,11 @@ Stable tag: 1.18
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shortcode for the scan button on ScanCircle partner websites.
-Only for registered ScanCircle partners.
+Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
 
 == Description ==
+Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
+
 Insert the following shortcode in your posts:
 
 `[scancircle
