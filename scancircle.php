@@ -1,7 +1,8 @@
 <?php
 	/*
-	Plugin Name: ScanCircle scanbutton
+	Plugin Name: scancircle
 	Description: Shortcode for ScanCircle scanbutton
+	Version: 1.18
 	*/
 	add_shortcode('scancircle', 'scancircle_handler');
 
