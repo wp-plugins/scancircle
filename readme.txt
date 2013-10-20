@@ -12,7 +12,7 @@ Only for registered ScanCircle partners.
 
 Insert the following shortcode in your posts:
 
-       [scancircle partner="partner-code" language="en/nl" scanmode="D|A|M|P" info="1" prompt="text" require="text" parameter="url-parameter" reference="fixed-value"]
+[scancircle partner="partner-code" language="en/nl" scanmode="D|A|M|P" info="1" prompt="text" require="text" parameter="url-parameter" reference="fixed-value"]
 
 The only required field is partner. Default language is "en" (English). Login to your ScanCircle partner page and click the wizard wand to see all available options.
 
