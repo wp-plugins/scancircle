@@ -3,7 +3,7 @@
 	 * Plugin Name: ScanCircle
 	 * Plugin URI: http://www.scancircle.com
 	 * Description: Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
-	 * Version: 1.18
+	 * Version: 1.19
 	 * Author: Arnoud Klaren
 	 */
 	add_shortcode('scancircle', 'scancircle_handler');
@@ -36,6 +36,21 @@
 </div>
 EOL;
 
-	return $scancircle;
+		return $scancircle;
+	}
+
+	add_shortcode('phpvar', 'phpvar_handler');
+
+	function phpvar_handler( $atts ) {
+		extract( shortcode_atts( array(
+			'get' => '',
+			'post' => '',
+			'server' => ''
+		), $atts ) );
+
+		if($get)	return $_GET[$get];
+		if($post)	return $_POST[$post];
+		if($server)	return $_SERVER[$server];
+		return 'Syntax: [phpvar get|post|server="var"]';
 	}
 ?>
