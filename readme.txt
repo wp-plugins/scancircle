@@ -3,11 +3,11 @@ Contributors: aklaren
 Tags: scancircle, scan button, shortcode
 Requires at least: 2.5
 Tested up to: 3.6.1
-Stable tag: 1.19
+Stable tag: 1.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
+Shortcode for the scan button on ScanCircle partner websites.
 
 == Description ==
 Shortcode for the scan button on ScanCircle partner websites. 
@@ -17,20 +17,23 @@ Only for registered ScanCircle partners.
 Insert the following shortcode in your posts:
 
 `[scancircle
-	partner="partner-code"
+	partner="{partner-code}"
 	language="en|nl"
 	scanmode="D|A|M|P" 
 	info="1"
-	prompt="text"
-	require="text"
-	parameter="url-parameter"
-	reference="fixed-value"
+	prompt="{label-input-field}"
+	parameter="{url-parameter}"
+	reference="{fixed-value}"
+	inputs="{element-name;...}"
+	validation="email;phone;{regex};{function}()"
+	jquery="1"
 ]`
 
 Remarks:
 
 * The only required field is `partner`.
 * Default language is "en" (English). 
+* The fields between {} are variables.
 * Login to your ScanCircle partner page and click the wizard wand to see all available options.
 * More information about the [ScanCircle partner program](http://www.scancircle.com/en/scancircle/partner-program).
 
@@ -55,6 +58,12 @@ See http://www.scancircle.com/forum/showthread.php?tid=50 (login required)
 1. None yet
 
 == Changelog ==
+= 1.20 =
+* `inputs` option added to support multiple input fields (names separated by semicolon), entered data will be joined (separated by semicolons)
+* `validation` option added to check input field for required data, e-mail address, phone number, any regular expression or using a custom function
+* `require` option now deprecated (converted to `prompt` option and `validation="required"` for backward compatibility)
+* `jquery` option added to run script when document.ready (mainly for Joomla web sites which requires <script> tag in header)
+
 = 1.19 =
 * Added `[phpvar]` shortcode to retrieve the PHP superglobals $_GET, $_POST and $_SERVER
 * Required to get the value of URL parameters, post variables, initiating web pages, etc.
@@ -65,6 +74,9 @@ See http://www.scancircle.com/forum/showthread.php?tid=50 (login required)
 * First release
 
 == Upgrade Notice ==
+= 1.20 =
+* Upgrade if you want to validate the data entered into the input field and/or want to use multiple input fields
+
 = 1.19 =
 * Only need to upgrade if you need to access PHP variables
 

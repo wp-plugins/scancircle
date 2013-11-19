@@ -1,9 +1,9 @@
 <?php
 	/**
 	 * Plugin Name: ScanCircle
-	 * Plugin URI: http://www.scancircle.com
+	 * Plugin URI: http://wordpress.org/plugins/scancircle
 	 * Description: Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
-	 * Version: 1.19
+	 * Version: 1.20
 	 * Author: Arnoud Klaren
 	 */
 	add_shortcode('scancircle', 'scancircle_handler');
@@ -18,22 +18,32 @@
 			'require' => '',
 			'parameter' => '',
 			'reference' => '',
+			'inputs' => '',
+			'validation' => '',
+			'https' => '',
+			'jquery' => '',
 			'env' => ''	// test/development folder preceeded by a slash
 		), $atts ) );
 
 		$options = '';
 		if($scanmode)	$options .= '&amp;scanmode='.$scanmode;
-		if($info)	$options .= '&amp;info';
+		if($info)		$options .= '&amp;info';
 		if($prompt) 	$options .= '&amp;prompt='.rawurlencode($prompt);
-		if($require) 	$options .= '&amp;require='.rawurlencode($require);
+		if($require) 	$options .= '&amp;require='.rawurlencode($require);		// deprecated
 		if($parameter)	$options .= '&amp;parameter='.$parameter;
 		if($reference)	$options .= '&amp;reference='.rawurlencode($reference);
-		if($options) $options = '?'.substr($options,5);
+		if($inputs)		$options .= '&amp;inputs='.rawurlencode($inputs);
+		if($validation)	$options .= '&amp;validation='.rawurlencode($validation);
+		if($jquery)		$options .= '&amp;jquery';
+		if($options)	$options = '?'.substr($options,5);
+
+		$secure = ($https ? 's' : '');
 
 		$scancircle = <<< EOL
 <div id="scancircle">
-<a href="http://$partner.scancircle.com$env/$language" id="scancircle_button" title="ScanCircle Scan">ScanCircle</a><script type="text/javascript" src="http://$partner.scancircle.com$env/$language/scancircle.js$options"></script>
+	<a href="http://$partner.scancircle.com$env/$language" id="scancircle_button" title="ScanCircle Scan">ScanCircle</a>
 </div>
+<script type="text/javascript" src="http$secure://$partner.scancircle.com$env/$language/scancircle.js$options"></script>
 EOL;
 
 		return $scancircle;
