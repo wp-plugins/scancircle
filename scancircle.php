@@ -3,7 +3,7 @@
 	 * Plugin Name: ScanCircle
 	 * Plugin URI: http://wordpress.org/plugins/scancircle
 	 * Description: Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
-	 * Version: 1.23rc
+	 * Version: 1.23
 	 * Author: Arnoud Klaren
 	 */
 	add_shortcode('scancircle', 'scancircle_handler');
