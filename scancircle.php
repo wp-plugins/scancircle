@@ -3,7 +3,7 @@
 	 * Plugin Name: ScanCircle
 	 * Plugin URI: http://wordpress.org/plugins/scancircle
 	 * Description: Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
-	 * Version: 1.20
+	 * Version: 1.23rc
 	 * Author: Arnoud Klaren
 	 */
 	add_shortcode('scancircle', 'scancircle_handler');
@@ -19,13 +19,14 @@
 			'parameter' => '',
 			'reference' => '',
 			'inputs' => '',
+			'category' => '',
 			'validation' => '',
 			'https' => '',
 			'jquery' => '',
 			'env' => ''	// test/development folder preceeded by a slash
 		), $atts ) );
 
-		$options = '';
+		$options = '?plugin=WordPress1.23';
 		if($scanmode)	$options .= '&amp;scanmode='.$scanmode;
 		if($info)		$options .= '&amp;info';
 		if($prompt) 	$options .= '&amp;prompt='.rawurlencode($prompt);
@@ -33,9 +34,9 @@
 		if($parameter)	$options .= '&amp;parameter='.$parameter;
 		if($reference)	$options .= '&amp;reference='.rawurlencode($reference);
 		if($inputs)		$options .= '&amp;inputs='.rawurlencode($inputs);
+		if($category)	$options .= '&amp;category='.rawurlencode($category);
 		if($validation)	$options .= '&amp;validation='.rawurlencode($validation);
 		if($jquery)		$options .= '&amp;jquery';
-		if($options)	$options = '?'.substr($options,5);
 
 		$secure = ($https ? 's' : '');
 

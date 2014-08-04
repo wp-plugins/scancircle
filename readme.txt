@@ -2,7 +2,7 @@
 Contributors: aklaren
 Tags: scancircle, scan button, shortcode
 Requires at least: 2.5
-Tested up to: 3.6.1
+Tested up to: 3.9.1
 Stable tag: 1.20
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,7 @@ Insert the following shortcode in your posts:
 	parameter="{url-parameter}"
 	reference="{fixed-value}"
 	inputs="{element-name;...}"
+	category="{category}"
 	validation="email;phone;{regex};{function}()"
 	jquery="1"
 ]`
@@ -53,11 +54,18 @@ Manual installation:
 == Frequently Asked Questions ==
 = How can I change the styling of the scan button or the text? =
 See http://www.scancircle.com/forum/showthread.php?tid=50 (login required)
+= Can I use the shortcuts in a template? =
+Yes, but you need the do_shortcut function as in: <?php echo do_shortcode('[scancircle ...]'); ?>
+= Can I user the [phpvar] shortcut in Contact Form 7 =
+No, to include URL parameters in a contact form (CF7), use the [Contact Form 7 Dynamic Text Extension](http://wordpress.org/plugins/contact-form-7-dynamic-text-extension) plugin
 
 == Screenshots ==
 1. None yet
 
 == Changelog ==
+= 1.23 =
+* `category` option added to indicate the purpose of the scan page and/or reference code, entered data will be prepended to the reference code (separated by a colon)
+
 = 1.20 =
 * `inputs` option added to support multiple input fields (names separated by semicolon), entered data will be joined (separated by semicolons)
 * `validation` option added to check input field for required data, e-mail address, phone number, any regular expression or using a custom function
@@ -68,7 +76,6 @@ See http://www.scancircle.com/forum/showthread.php?tid=50 (login required)
 * Added `[phpvar]` shortcode to retrieve the PHP superglobals $_GET, $_POST and $_SERVER
 * Required to get the value of URL parameters, post variables, initiating web pages, etc.
 * Added because they may be needed for ScanCircle and I could not find an easy way or simple plugin to achieve this
-* To include URL parameters in a contact form (CF7), use the [Contact Form 7 Dynamic Text Extension](http://wordpress.org/plugins/contact-form-7-dynamic-text-extension) plugin
 
 = 1.18 =
 * First release
