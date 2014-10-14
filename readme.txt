@@ -3,7 +3,7 @@ Contributors: aklaren
 Tags: scancircle, scan button, shortcode
 Requires at least: 2.5
 Tested up to: 4.0
-Stable tag: 1.23
+Stable tag: 1.24
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,7 @@ Insert the following shortcode in your posts:
 	category="{category}"
 	validation="email;phone;{regex};{function}()"
 	jquery="1"
+	https="2|1|0"
 ]`
 
 Remarks:
@@ -35,13 +36,13 @@ Remarks:
 * The only required field is `partner`.
 * Default language is "en" (English). 
 * The fields between {} are variables.
-* Login to your ScanCircle partner page and click the wizard wand to see all available options.
-* More information about the [ScanCircle partner program](http://www.scancircle.com/en/scancircle/partner-program).
+* Login to your ScanCircle partner page and select the Scan Widget tab to see all available options.
+* More information about the [ScanCircle partner program](https://www.scancircle.com/en/scancircle/partner-program).
 
 Use the `[phpvar get|post|server="var"]` shortcode to retrieve the PHP superglobals $_GET, $_POST and $_SERVER:
 
 * `[phpvar get="refcode"]`: returns the URL parameter `refcode`
-* `[phpvar post="computer"]`: returns the posted field `computer`
+* `[phpvar post="name"]`: returns the posted field `name`
 * `[phpvar server="HTTP_REFERER"]`: returns the initiating web page
 
 == Installation ==
@@ -53,16 +54,19 @@ Manual installation:
 
 == Frequently Asked Questions ==
 = How can I change the styling of the scan button or the text? =
-See http://www.scancircle.com/forum/showthread.php?tid=50 (login required)
+See https://www.scancircle.com/forum/showthread.php?tid=50 (login required)
 = Can I use the shortcuts in a template? =
 Yes, but you need the do_shortcut function as in: <?php echo do_shortcode('[scancircle ...]'); ?>
 = Can I user the [phpvar] shortcut in Contact Form 7 =
-No, to include URL parameters in a contact form (CF7), use the [Contact Form 7 Dynamic Text Extension](http://wordpress.org/plugins/contact-form-7-dynamic-text-extension) plugin
+No, to include URL parameters in a contact form (CF7), use the [Contact Form 7 Dynamic Text Extension](https://wordpress.org/plugins/contact-form-7-dynamic-text-extension) plugin
 
 == Screenshots ==
 1. None yet
 
 == Changelog ==
+= 1.24 =
+* Load scancircle.js and/or link to partner environment using https, `https` option added to select which: 2=both, 1=JavaScript only, 0=none (default)
+
 = 1.23 =
 * `category` option added to indicate the purpose of the scan page and/or reference code, entered data will be prepended to the reference code (separated by a colon)
 
@@ -81,6 +85,12 @@ No, to include URL parameters in a contact form (CF7), use the [Contact Form 7 D
 * First release
 
 == Upgrade Notice ==
+= 1.24 =
+* Upgrade if your website uses https
+
+= 1.23 =
+* Only need to upgrade if you want to use the `category` option
+
 = 1.20 =
 * Upgrade if you want to validate the data entered into the input field and/or want to use multiple input fields
 
