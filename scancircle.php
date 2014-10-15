@@ -26,7 +26,7 @@
 			'env' => ''	// test/development folder preceeded by a slash
 		), $atts ) );
 
-		$options = '?plugin=WordPress1.23';
+		$options = '?plugin=WordPress1.24';
 		if($scanmode)	$options .= '&amp;scanmode='.$scanmode;
 		if($info)		$options .= '&amp;info';
 		if($prompt) 	$options .= '&amp;prompt='.rawurlencode($prompt);
