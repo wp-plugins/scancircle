@@ -2,8 +2,8 @@
 Contributors: aklaren
 Tags: scancircle, scan button, shortcode
 Requires at least: 2.5
-Tested up to: 4.0
-Stable tag: 1.24
+Tested up to: 4.1.1
+Stable tag: 1.27
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,7 +28,7 @@ Insert the following shortcode in your posts:
 	category="{category}"
 	validation="email;phone;{regex};{function}()"
 	jquery="1"
-	https="2|1|0"
+	https="0"
 ]`
 
 Remarks:
@@ -64,6 +64,9 @@ No, to include URL parameters in a contact form (CF7), use the [Contact Form 7 D
 1. None yet
 
 == Changelog ==
+= 1.27 =
+* Changed `https` option to load scancircle.js using HTTPS by default unless https=0 is specified. Link to partner environment always uses HTTP (only used if JavaScript is not loaded correctly)
+
 = 1.24 =
 * Load scancircle.js and/or link to partner environment using https, `https` option added to select which: 2=both, 1=JavaScript only, 0=none (default)
 

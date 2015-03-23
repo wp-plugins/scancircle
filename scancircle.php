@@ -2,8 +2,8 @@
 	/**
 	 * Plugin Name: ScanCircle
 	 * Plugin URI: https://wordpress.org/plugins/scancircle
-	 * Description: Shortcode for the scan button on ScanCircle partner websites. Only for registered ScanCircle partners.
-	 * Version: 1.24
+	 * Description: Shortcode for the scan widget on ScanCircle partner websites. Only for registered ScanCircle partners.
+	 * Version: 1.27
 	 * Author: Arnoud Klaren
 	 */
 	add_shortcode('scancircle', 'scancircle_handler');
@@ -37,15 +37,13 @@
 		if($category)	$options .= '&amp;category='.rawurlencode($category);
 		if($validation)	$options .= '&amp;validation='.rawurlencode($validation);
 		if($jquery)		$options .= '&amp;jquery';
-
-		$secure1 = ($https>=1 ? 's' : '');
-		$secure2 = ($https>=2 ? 's' : '');
+		$secure = ($https != 0 ? 's' : '');
 
 		$scancircle = <<< EOL
 <div id="scancircle">
-	<a href="http$secure2://$partner.scancircle.com$env/$language" id="scancircle_button" title="ScanCircle Scan">ScanCircle</a>
+	<a href="http://$partner.scancircle.com$env/$language/scan" id="scancircle_button" title="ScanCircle Scan">ScanCircle</a>
 </div>
-<script type="text/javascript" src="http$secure1://$partner.scancircle.com$env/$language/scancircle.js$options"></script>
+<script type="text/javascript" src="http$secure://$partner.scancircle.com$env/$language/scancircle.js$options"></script>
 EOL;
 
 		return $scancircle;
